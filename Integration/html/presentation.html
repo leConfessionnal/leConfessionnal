@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Présentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" >
+    <link rel="stylesheet" type="text/css" href="../css/styles_mobile.css" >
+</head>
+<body>
+<header>
+    <nav>
+        <a href="../index.html"><img src="../img/logo-confessionnalphilo.png" alt="logo"></a>
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="../index.html">Accueil</a></li>
+            <li><hr></li>
+            <li><a href="presentation.html">Présentation</a></li>
+            <li><hr></li>
+            <li><a href="confessions.html">Confessions</a></li>
+            <li><hr></li>
+            <li><a href="evenements.html">Événements</a></li>
+            <li><hr></li>
+            <li><a href="connexion.html">Se Connecter</a></li>
+            <li><hr></li>
+            <li id="bas-menu"><img style="width: 150px;height: 50px;" src="../img/bas-menu.png" alt="logo"></li>
+        </ul>
+    </nav>
+</header>
+<div class="contenu" id="pagepresentation">
+<img src="../img/logo-confessionnalphilo.png" alt="logo">
+<h2>Mais qu'est-ce que c'est ?</h2>
+<iframe style="margin-top:30px; margin-bottom:40px;" width="300" height="250" src="https://www.youtube.com/embed/Xd1E4HQBW5k?rel=0&autoplay=1"  allowfullscreen></iframe>
+<p>A l’instar d’un photomaton sous vidéo surveillance, les participants sont filmés dès leurs entrée. Les « confessions » sont ensuite partagées sur ce site. Moments récréatifs (voir festifs), poétiques (ou pas), réflexif, le Confessionnal peut être vu comme un exutoire social, un espace de liberté qui convoque à la fois les problématiques d’identité, d’intimité et de mémoire incidentes aux pratiques actuelles des réseaux numériques.</p>
+
+
+
+
+
+</div>
+<footer>
+    <div class="logo">
+        <a href="mailto:sebaugier@gmail.com" ><img src="../img/enveloppe.png" alt="enveloppe"> </a>
+        <a href="https://www.youtube.com/channel/UCPbr4ZejUf5y4R5yb_Iqtdg"><img src="../img/youtube-logo.png" alt="logo-youtube"></a>
+        <a href="https://www.facebook.com/LeConfessionnalInstallationNumeriqueExtimite/"><img src="../img/facebook.png" alt="logo-facebook"></a>
+    </div>
+    <span>© 2015 | Site réalisé par MMI Montbéliard. Tous droits résérvés.</span>
+</footer>
+<script>
+    var hamburger = document.querySelector('#hamburger');
+    var nav = document.querySelector('nav');
+
+    hamburger.addEventListener("click", function () {
+        nav.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
