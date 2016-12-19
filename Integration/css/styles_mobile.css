@@ -77,7 +77,7 @@ nav ul li a {
     padding: 10px;
 }
 
-nav ul li hr {
+.tiret {
     width: 80%;
     background-color: #ffffff;
     height: 1px;
