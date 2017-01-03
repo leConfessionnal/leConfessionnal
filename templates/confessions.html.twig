@@ -1,0 +1,67 @@
+{% extends 'general.html.twig' %}
+
+{% block contenu %}
+<div class="contenu">
+    <h1>Confessions</h1>
+    <iframe style="margin-top:30px; margin-bottom:20px;" width="350" height="200" src="https://youtube.com/embed/WGWZwNk0IKU?rel=0" allowfullscreen id="principal-video"></iframe>
+</div>
+<div class="tiret-bordeaux"></div>
+<h2>Toutes les confessions...</h2>
+<div id="info">
+    <input title="recherche" type="text" name="Recherche" placeholder="Rechercher">
+    <span class="rejoindre" id="trier" >Trier</span>
+</div>
+<div id="tags">
+    <ul id="premier" >
+        <li class="first"> Homme</li>
+        <li class="first"> Femme</li>
+        <li class="first"> Groupe</li>
+    </ul>
+    <ul id="deuxieme">
+        <li class="second">Accessoire</li>
+        <li class="second">Histoires</li>
+        <li class="second">Musique</li>
+        <li class="second">...</li>
+        <li class="second">...</li>
+        <li class="second">...</li>
+        <li class="second">...</li>
+        <li class="second">...</li>
+        <li class="second">...</li>
+    </ul>
+</div>
+<div id="listeconfs">
+    <img src="https://img.youtube.com/vi/Z6zao4MkboQ/maxresdefault.jpg" data-code="Z6zao4MkboQ?rel=0" class="clickVideo" alt="miniature-confessions">
+    <img src="https://img.youtube.com/vi/LonM0W9TXkc/maxresdefault.jpg" data-code="LonM0W9TXkc?rel=0" class="clickVideo" alt="miniature-confessions">
+    <img src="https://img.youtube.com/vi/gyNcnq95-Ns/maxresdefault.jpg" data-code="gyNcnq95-Ns?rel=0" class="clickVideo" alt="miniature-confessions">
+    <img src="https://img.youtube.com/vi/JshKOqXZ_vg/maxresdefault.jpg" data-code="JshKOqXZ_vg?rel=0" class="clickVideo" alt="miniature-confessions">
+</div>
+{% endblock contenu %}
+
+{% block script %}
+    <script>
+        var tri = document.querySelector("#trier");
+        var tags = document.querySelector("#tags");
+        var premier = document.querySelector("#premier");
+        var deuxieme = document.querySelector("#deuxieme");
+
+        tri.addEventListener("click", function () {
+            tags.classList.toggle('active');
+            tri.classList.toggle('active');
+        });
+        premier.addEventListener("click", function () {
+            deuxieme.classList.toggle('active');
+        });
+
+    </script>
+    <script>
+        $(document).ready(function(){
+            $(".clickVideo").on("click", function(){
+                var code = $(this).data("code");
+//            console.log(code);
+
+                $("#principal-video").attr('src', 'https://www.youtube.com/embed/'+code);
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+        });
+    </script>
+{% endblock script %}

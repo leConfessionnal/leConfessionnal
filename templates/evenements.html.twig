@@ -1,0 +1,101 @@
+{% block contenu %}
+    <div class="container">
+        <div id="slider">
+            <ul>
+                <li>
+                    <iframe style="margin-top:110px; margin-bottom:10px;" width="250" height="180" src="https://www.youtube.com/embed/x-dSQeLIrm0?rel=0"  allowfullscreen></iframe>
+                    <h1>Bloody Week End</h1>
+                </li>
+                <li>
+                    <iframe style="margin-top:110px; margin-bottom:10px;" width="250" height="180" src="https://www.youtube.com/embed/SGLeDsNivd0?rel=0"  allowfullscreen></iframe>
+                    <h1>Natala</h1>
+                </li>
+                <li>
+                    <iframe style="margin-top:110px; margin-bottom:10px;" width="250" height="180" src="https://www.youtube.com/embed/7ArVA5maa0U?rel=0" allowfullscreen></iframe>
+                    <h1>Cuba</h1>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="buttons">
+
+        <a href="#" class="control_prev"><img src="../img/fleche-gauche.png" alt="flechegauche"></a>
+
+
+
+        <a href="#" class="control_next"><img src="../img/fleche-droite.png" alt="flechedroite"></a>
+    </div>
+
+
+    <div class="tiret-bordeaux"></div>
+    <div class="contenu prochain">
+        <h1>Prochains Événements</h1>
+        <h2>Paris Games week</h2>
+        <img src="../img/pgw.png" alt="paris games week">
+        <h3>27/10/2016</h3>
+        <p>Pour cette 6e édition, la Paris Games Week, le salon français du jeu vidéo, a vécu 5 jours riches en expériences culturelles, ludiques, technologiques et pédagogiques. Cette année, vous étiez 307 000 visiteurs, à fouler les allées du salon dans une ambiance festive.
+        </p>
+    </div>
+    <div class="tiret-bordeaux"></div>
+    <div class="contenu prochaingris prochain">
+        <h2>Paris Games week</h2>
+        <img src="../img/pgw.png" alt="paris games week">
+        <h3>27/10/2016</h3>
+        <p>Pour cette 6e édition, la Paris Games Week, le salon français du jeu vidéo, a vécu 5 jours riches en expériences culturelles, ludiques, technologiques et pédagogiques. Cette année, vous étiez 307 000 visiteurs, à fouler les allées du salon dans une ambiance festive.
+        </p>
+    </div>
+    <div class="tiret-bordeaux"></div>
+    <div class="contenu  prochain">
+        <h2>Paris Games week</h2>
+        <img src="../img/pgw.png" alt="paris games week">
+        <h3>27/10/2016</h3>
+        <p>Pour cette 6e édition, la Paris Games Week, le salon français du jeu vidéo, a vécu 5 jours riches en expériences culturelles, ludiques, technologiques et pédagogiques. Cette année, vous étiez 307 000 visiteurs, à fouler les allées du salon dans une ambiance festive.
+        </p>
+    </div>
+{% enblock contenu %}
+
+{% block script %}
+    <script>
+        jQuery(document).ready(function ($) {
+
+
+            var slideCount = $('#slider ul li').length;
+            var slideWidth = $('#slider ul li').width();
+            var slideHeight = $('#slider ul li').height();
+            var sliderUlWidth = slideCount * slideWidth;
+
+            $('#slider').css({ width: slideWidth, height: slideHeight });
+
+            $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+
+            $('#slider ul li:last-child').prependTo('#slider ul');
+
+            function moveLeft() {
+                $('#slider ul').animate({
+                    left: + slideWidth
+                }, 200, function () {
+                    $('#slider ul li:last-child').prependTo('#slider ul');
+                    $('#slider ul').css('left', '');
+                });
+            };
+
+            function moveRight() {
+                $('#slider ul').animate({
+                    left: - slideWidth
+                }, 200, function () {
+                    $('#slider ul li:first-child').appendTo('#slider ul');
+                    $('#slider ul').css('left', '');
+                });
+            };
+
+            $('a.control_prev').click(function () {
+                moveLeft();
+            });
+
+            $('a.control_next').click(function () {
+                moveRight();
+            });
+
+        });
+    </script>
+{% endblock script %}

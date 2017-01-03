@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confessions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" >
+    <link rel="stylesheet" type="text/css" href="css/styles_mobile.css" >
+    <script src="js/jquery-1.11.3.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <a href="index.php?page=index"><img src="images/logo-confessionnalphilo.png" alt="logo"></a>
+        <div id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="index.php?page=index">Accueil</a></li>
+            <li class="tiret"></li>
+            <li><a href="index.php?page=presentation">Présentation</a></li>
+            <li class="tiret"></li>
+            <li><a href="index.php?page=confessions">Confessions</a></li>
+            <li class="tiret"></li>
+            <li><a href="index.php?page=evennements">Événements</a></li>
+            <li class="tiret"></li>
+            <li><a href="index.php?page=connexion">Se Connecter</a></li>
+            <li class="tiret"></li>
+            <li id="bas-menu"><img style="width: 150px;height: 50px;" src="images/bas-menu.png" alt="logo"></li>
+        </ul>
+    </nav>
+</header>
+
+{% block contenu %}
+{% endblock%}
+
+
+<footer>
+    <div class="logo">
+        <a href="" ><img src="images/enveloppe.png" alt="enveloppe"> </a>
+        <a href="https://www.youtube.com/channel/UCPbr4ZejUf5y4R5yb_Iqtdg"><img src="images/youtube-logo.png" alt="logo-youtube"></a>
+        <a href="https://www.facebook.com/LeConfessionnalInstallationNumeriqueExtimite/"><img src="images/facebook.png" alt="logo-facebook"></a>
+    </div>
+    <span>© 2015 | Site réalisé par MMI Montbéliard. Tous droits résérvés.</span>
+</footer>
+
+<script>
+    var hamburger = document.querySelector('#hamburger');
+    var nav = document.querySelector('nav');
+
+    hamburger.addEventListener("click", function () {
+        nav.classList.toggle('active');
+    });
+</script>
+
+{% block script %}
+{% endblock script %}

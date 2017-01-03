@@ -1,0 +1,21 @@
+{% block contenu %}
+    <div class="Contenu" id="inscription">
+        <a id="co" href="connexion.html">Connexion</a>
+        <a id="inscr" href="inscription.html">Inscription</a>
+        <form class="formco" action="../index.html" method="post" >
+            <div>
+                <input type="email" id="mail" name="user_mail" placeholder="Adresse mail">
+            </div>
+            <div>
+                <input type="password" id="password" name="user_password" placeholder="Mot de Passe">
+            </div>
+            <div>
+                <input type="date" id="date" name="user_date" >
+            </div>
+            <div class="button">
+                <button type="submit">S'inscrire</button>
+            </div>
+        </form>
+        <img style="width: 150px;height: 100px;" src="images/logo-confessionnalphilo.png" alt="logo">
+    </div>
+{% endblock contenu %}
